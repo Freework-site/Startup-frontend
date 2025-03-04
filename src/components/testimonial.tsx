@@ -13,7 +13,7 @@ const testimonials = [
   },
   {
     id: 2,
-    quote: "I am a huge Mercury stan! All my companies use it. It is the bank built for human intuition, and y'all are just scratching the surface.",
+    quote: "I am a huge Mercury stan! All my companies use it. It is the bank built for human intuition, and y&apos;all are just scratching the surface.",
     name: "Garret McCurrach",
     invested: "Invested in Mercury",
     investors: "alongside 2,453 investors",
@@ -37,7 +37,7 @@ const testimonials = [
   },
   {
     id: 5,
-    quote: "My WOW factor when I started writing on Substack surpassed my expectations. I believe in the mission and model of the company. Let's get it!",
+    quote: "My WOW factor when I started writing on Substack surpassed my expectations. I believe in the mission and model of the company. Let&apos;s get it!",
     name: "Corey Lowe",
     invested: "Invested in Substack",
     investors: "alongside 6,688 investors",
@@ -61,7 +61,7 @@ export default function SmoothTestimonials() {
               height={64}
               className="rounded-full mb-3"
             />
-            <p className="italic text-gray-700">"{testimonial.quote}"</p>
+            <p className="italic text-gray-700">&quot;{testimonial.quote}&quot;</p>
             <h3 className="font-semibold mt-2">{testimonial.name}</h3>
             <p className="text-sm text-gray-500">{testimonial.invested}</p>
             <p className="text-xs text-gray-400">{testimonial.investors}</p>
