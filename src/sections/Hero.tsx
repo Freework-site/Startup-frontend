@@ -1,9 +1,4 @@
 import Button from "@/src/components/button";
-import designExample1Image from '../assets/images/design-example-1.png'
-import designExample2Image from '../assets/images/design-example-2.png'
-import designExample3Image from '../assets/images/design-example-3.png'
-import SearchForm from '../components/SearchForm'
-import Image from "next/image";
 export default function Hero() {
     return <section className="py-24 flex flex-col items-center">
         <div className="container max-w-screen-xl mx-auto px-4 relative">

@@ -5,10 +5,6 @@ import LableBox from '../assets/images/labelbox.svg'
 import NeighBor from '../assets/images/neighbor.svg'
 import Plaid from '../assets/images/plaid.svg'
 import Rippling from '../assets/images/rippling.svg'
-import SnapDocs from '../assets/images/snapdocs.svg'
-import Room from '../assets/images/room.svg'
-import Image from "next/image";
-import EmployeeCard from "@/src/components/card";
 import React from "react";
 import Card from "@/src/components/card";
 
