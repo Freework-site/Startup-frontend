@@ -36,7 +36,7 @@ export default function Integrations() {
                     <div>
                 <div  className="h-[400px] lg:h-[800px] overflow-hidden mt-8 lg:mt-0 grid md:grid-cols-2 gap-4 [mask-image:linear-gradient(to_bottom,transparent_0%,white_10%,white_90%,transparent_100%)]">
                     <Card integrations={integrations} />
-                    <Card integrations={integrations.slice().reverse()} className="hidden md:flex"/>
+                    <Card integrations={integrations.slice().reverse()}  reverse className="hidden md:flex"/>
                 </div>
                     </div>
                 </div>
