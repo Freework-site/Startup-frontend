@@ -1,6 +1,6 @@
 "use client"
 import Image from "next/image";
-import logoImage from '@/src/assets/images/logo.svg'
+import logoImage from '@/src/assets/images/logo.png'
 import Button from '../components/button'
 import {useState} from 'react'
 import {twMerge} from "tailwind-merge";
@@ -24,7 +24,7 @@ export default function Navbar() {
             <div className="grid grid-cols-2 lg:grid-cols-3  px-4 p-2 md:pr-2 items-center
                ">
                 <div>
-                    <Image src={logoImage} alt="Startup Logo" className="h-9 w-auto md:h-auto" />
+                    <Image src={logoImage} width="120" alt="Startup Logo" className="h-9 w-auto md:h-auto" />
                 </div>
                 <div className="lg:flex justify-center items-center hidden">
                     <nav className="flex gap-6 font-medium">

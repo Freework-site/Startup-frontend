@@ -1,7 +1,7 @@
 // components/Footer.jsx
 import Link from 'next/link';
 import SmoothTestimonials from "@/src/components/testimonial";
-import logo from '../assets/images/logo.svg'
+import logo from '../assets/images/logo.png'
 import Image from "next/image";
 const Footer = () => {
     const currentYear = new Date().getFullYear();
@@ -20,7 +20,7 @@ const Footer = () => {
                     <div className="md:mr-8 mb-4 md:mb-0">
                         {/* Logo or Brand Name */}
                         <span className="text-2xl font-bold text-gray-900">
-                            <Image src={logo} alt= "logo" />
+                            <Image src={logo} width="120" alt= "logo" />
                         </span>
                     </div>
                     <div className="flex-1">
