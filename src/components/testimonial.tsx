@@ -1,90 +1,91 @@
-"use client";
 import Image from "next/image";
-import { useMemo } from "react";
 
-const testimonials = [
-  {
-    id: 1,
-    quote: "Because this team is incredibly smart and driven, and just amazing people.",
-    name: "Shareil Nariman",
-    invested: "Invested in Arrived",
-    investors: "alongside 1,778 investors",
-    image: "/api/placeholder/64/64",
-  },
-  {
-    id: 2,
-    quote: "I am a huge Mercury stan! All my companies use it. It is the bank built for human intuition, and y&apos;all are just scratching the surface.",
-    name: "Garret McCurrach",
-    invested: "Invested in Mercury",
-    investors: "alongside 2,453 investors",
-    image: "/api/placeholder/64/64",
-  },
-  {
-    id: 3,
-    quote: "Been using Replit for years, love the company, love the team, love the mission. LETS GOOOOO!!",
-    name: "Stefan Opsal",
-    invested: "Invested in Replit",
-    investors: "alongside 2,589 investors",
-    image: "/api/placeholder/64/64",
-  },
-  {
-    id: 4,
-    quote: "I love wine, entrepreneurship, and the great state of Tennessee!",
-    name: "Chuck Morris",
-    invested: "Invested in Bad Idea",
-    investors: "alongside 159 investors",
-    image: "/api/placeholder/64/64",
-  },
-  {
-    id: 5,
-    quote: "My WOW factor when I started writing on Substack surpassed my expectations. I believe in the mission and model of the company. Let&apos;s get it!",
-    name: "Corey Lowe",
-    invested: "Invested in Substack",
-    investors: "alongside 6,688 investors",
-    image: "/api/placeholder/64/64",
-  },
-];
+// Image Imports
+import AshwinSantiago from "../assets/images/avatar-ashwin-santiago.jpg";
+import Testimonial3 from "../assets/images/avatar-florence-shaw.jpg";
+import Testimonial5 from "../assets/images/avatar-lula-meyers.jpg";
+import Testimonial7 from "../assets/images/avatar-owen-garcia.jpg";
+import Testimonial8 from "../assets/images/avatar.png";
 
-export default function SmoothTestimonials() {
-  // Duplicate testimonials to create an infinite scrolling effect
-  const duplicatedTestimonials = useMemo(() => [...testimonials, ...testimonials], []);
+export default function TestimonialSection() {
+  const testimonialImages = [
+    AshwinSantiago,
+    Testimonial3,
+    Testimonial5,
+    Testimonial7,
+    Testimonial8
+  ];
 
   return (
-    <div className="overflow-hidden py-10 bg-gray-50">
-      <div className="flex gap-6 animate-scroll">
-        {duplicatedTestimonials.map((testimonial, index) => (
-          <div key={index} className="flex-shrink-0 w-80 p-6 bg-white shadow-lg rounded-lg">
-            <Image
-              src={testimonial.image}
-              alt={testimonial.name}
-              width={64}
-              height={64}
-              className="rounded-full mb-3"
+    <div className="relative bg-white py-16 px-4 overflow-hidden">
+      {/* Floating Image Grid for Desktop */}
+      <div className="hidden md:block absolute top-0 left-0 right-0 bottom-0 z-0">
+        <div className="max-w-7xl mx-auto relative h-full">
+          {testimonialImages.map((img, index) => {
+            // Custom positioning to create the floating effect
+            const positions = [
+              "top-0 left-0", "top-10 left-20", "top-5 right-0", 
+              "top-20 left-10", "top-15 right-20", "bottom-10 left-0", 
+              "bottom-0 right-0", "top-25 left-30", "bottom-15 left-20",
+              "top-10 right-10", "bottom-20 right-15", "top-0 right-30",
+              "bottom-5 left-25", "top-15 left-15", "bottom-10 right-25",
+              "top-25 right-15"
+            ];
+
+            return (
+              <div 
+                key={index} 
+                className={`absolute w-32 h-32 rounded-lg overflow-hidden shadow-lg transform-gpu transition-transform duration-300 hover:scale-105 ${positions[index]}`}
+                style={{
+                  transform: `rotate(${(index % 2 === 0 ? 1 : -1) * (Math.random() * 10 + 2)}deg)`,
+                }}
+              >
+                <Image 
+                  src={img} 
+                  alt={`Testimonial ${index + 1}`} 
+                  layout="fill"
+                  objectFit="cover"
+                  className="rounded-lg"
+                />
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* Content Section */}
+      <div className="relative z-10 max-w-4xl mx-auto text-center">
+        <p className="text-gray-600 text-lg mb-4">Testimonials</p>
+        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-800">
+          Trusted by leaders 
+          <br />
+          from various industries
+        </h2>
+        <p className="text-gray-700 text-base md:text-lg mb-8 max-w-2xl mx-auto">
+          Learn why professionals trust our solutions to complete their customer journeys.
+        </p>
+        <button className="bg-black text-white px-6 py-3 rounded-full hover:bg-gray-800 transition duration-300 ease-in-out">
+          Read Success Stories →
+        </button>
+      </div>
+
+      {/* Mobile Image Layout */}
+      <div className="md:hidden flex flex-wrap justify-center items-center mt-8 opacity-50">
+        {testimonialImages.slice(0, 8).map((img, index) => (
+          <div 
+            key={index} 
+            className="w-16 h-16 m-1 rounded-lg overflow-hidden relative"
+          >
+            <Image 
+              src={img} 
+              alt={`Testimonial ${index + 1}`} 
+              layout="fill"
+              objectFit="cover"
+              className="rounded-lg"
             />
-            <p className="italic text-gray-700">&quot;{testimonial.quote}&quot;</p>
-            <h3 className="font-semibold mt-2">{testimonial.name}</h3>
-            <p className="text-sm text-gray-500">{testimonial.invested}</p>
-            <p className="text-xs text-gray-400">{testimonial.investors}</p>
           </div>
         ))}
       </div>
-
-      {/* Smooth Scrolling Animation */}
-      <style jsx>{`
-        @keyframes scroll {
-          from {
-            transform: translateX(0);
-          }
-          to {
-            transform: translateX(-50%);
-          }
-        }
-        .animate-scroll {
-          display: flex;
-          white-space: nowrap;
-          animation: scroll 20s linear infinite;
-        }
-      `}</style>
     </div>
   );
 }
