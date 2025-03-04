@@ -1,18 +1,18 @@
 import Image from "next/image";
 
 // Image Imports
-import AshwinSantiago from "../assets/images/avatar-ashwin-santiago.jpg";
-import Testimonial3 from "../assets/images/avatar-florence-shaw.jpg";
-import Testimonial5 from "../assets/images/avatar-lula-meyers.jpg";
-import Testimonial7 from "../assets/images/avatar-owen-garcia.jpg";
+import Testimonial3 from "../assets/images/avatar4.png";
+import Testimonial5 from "../assets/images/avatar3.png";
+import AshwinSantiago from "../assets/images/avatar5.png";
+import Testimonial7 from "../assets/images/avatar2.png";
 import Testimonial8 from "../assets/images/avatar.png";
 
 export default function TestimonialSection() {
   const testimonialImages = [
     AshwinSantiago,
-    Testimonial3,
     Testimonial5,
     Testimonial7,
+    Testimonial3,
     Testimonial8
   ];
 
