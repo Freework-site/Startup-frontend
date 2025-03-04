@@ -14,7 +14,7 @@ const navLinks = [
 ];
 
 export default function Navbar() {
-    const [isOpen, setIsOpen] = useState(true);
+    const [isOpen, setIsOpen] = useState(false);
     return <>
         <section className="py-4 lg:py-8 fixed w-full top-0 z-50">
 
